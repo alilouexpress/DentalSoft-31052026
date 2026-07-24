@@ -1,0 +1,31 @@
+Dashboard
+Dashboard helps you to quickly analyze the most important statistics of your clinic/organization, without getting into the nitty gritty details
+Booking and Scheduling
+This feature helps you to schedule appointments with your patient. Appointment management has never been made easier. It takes care of your need to handle all the appointments from the same place, in the most convenient way, with all the necessary information. Booking and scheduling feature helps clinics/hospitals to plan their month, week and day in the most efficient way by allocating the right resources for it.
+
+Calendar features will help you to visualize your appointment schedule in the friendly way, for daily, weekly and monthly. The management Of appointments becomes easier with this feature.
+
+Patient management features handle patient registration and history of their health. Lab reports, billing details, etc are also accessible from here . From the same user interface now you can have access to all the information related to the individual patient, quickly.
+
+Lab work management features handle all the lab work records that are part Of treatment. You will be able to track your lab work for any given treatment from here. Any lab work which has been given to outside lab can be tracked from this feature.
+Electronic Health Record
+Module displays digital health records for each patient, simplifies patient data, offering a user-friendly platform to manage medical history, including health issues, diagnoses, and treatment details. Key patient information like age, gender and emergency contacts is easily accessible for efficient clinic administration.
+Payment Management features help you to record all the payments received from your customers for the sales of service and treatment, and also all the payments made to the vendor for the purchase of the service and goods.
+Treatment Management
+features help you to create the treatments provided by the clinic/hospital. All the Other relevant information regarding the treatments are also recorded through this feature such as the duration, price, code, buffer time etc.
+Task Management
+will help you to create a task and also assign it to someone else, if required. The status of the task can be changed from To-Do, In-Progress and Completed. Tasks can be set with Reminder.
+Sales Management
+features help you to issue invoices for each sales made by the clinic/hospital. After the treatments are done, sales information is recorded in the system, which can be done by issuing sales invoice.
+Purchase Management
+Any purchase that you make from the vendor can be recorded in the system with the help of Purchase management features. You will be able to track all your expenses throughout the month and year.
+Accounting
+ Module will handle all of your accounting requirements. Now you don't have to maintain a separate accounting software. DentalPro has a complete accounting feature built-within. It has features such as Opening account, Journal entry, Debit Note, Credit Note and Payment adjustments which helps to track payment easily.
+User Management
+New users in the system are created from the User Management module. You can use this module to add Doctors, staff and anyone who needs access to the application. Each user can be given appropriate permission so that they can have access to the information for which they are authorized.
+Leave and Attendance
+Doctors and staff can apply for the leave and get their leave approved from the system itself. Clinic/hospital admin will not have to maintain a separate form of leave and at any point in time check the leaves available or taken by the staff.
+Holiday and Notice
+are helpful for the administration of the clinic/hospital. Administrator of the clinic/hospital can post the holidays list and notice. Doctors and staff can have access to the information regarding the holidays and notices
+Reporting and Analytics
+Gain valuable insights into clinic performance, financial summaries, patient demographics, and other crucial metrics with our user-friendly reporting tools.
