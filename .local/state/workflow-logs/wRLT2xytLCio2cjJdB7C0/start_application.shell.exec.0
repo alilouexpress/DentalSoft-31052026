@@ -1,0 +1,106 @@
+
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+[1G[0K10:45:49 PM [express] serving on port 5000
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+Error fetching appointments: error: password authentication failed for user 'neondb_owner'
+    at [90mfile:///home/runner/workspace/[39mnode_modules/[4m@neondatabase/serverless[24m/index.mjs:1345:74
+[90m    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)[39m
+    at async NeonPreparedQuery.execute [90m(/home/runner/workspace/[39mnode_modules/[4msrc[24m/neon-serverless/session.ts:102:18[90m)[39m
+    at async DatabaseStorage.getAppointmentsByDate [90m(/home/runner/workspace/[39mserver/storage.ts:155:21[90m)[39m
+    at async <anonymous> [90m(/home/runner/workspace/[39mserver/routes.ts:105:24[90m)[39m {
+  length: [33m75[39m,
+  severity: [32m'ERROR'[39m,
+  code: [32m'28P01'[39m,
+  detail: [90mundefined[39m,
+  hint: [90mundefined[39m,
+  position: [90mundefined[39m,
+  internalPosition: [90mundefined[39m,
+  internalQuery: [90mundefined[39m,
+  where: [90mundefined[39m,
+  schema: [90mundefined[39m,
+  table: [90mundefined[39m,
+  column: [90mundefined[39m,
+  dataType: [90mundefined[39m,
+  constraint: [90mundefined[39m,
+  file: [90mundefined[39m,
+  line: [90mundefined[39m,
+  routine: [90mundefined[39m
+}
+10:45:56 PM [express] GET /api/appointments 500 in 67ms :: {"error":"Failed to fetch appointments"}
+Error fetching dashboard stats: error: password authentication failed for user 'neondb_owner'
+    at [90mfile:///home/runner/workspace/[39mnode_modules/[4m@neondatabase/serverless[24m/index.mjs:1345:74
+[90m    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)[39m
+    at async NeonPreparedQuery.execute [90m(/home/runner/workspace/[39mnode_modules/[4msrc[24m/neon-serverless/session.ts:102:18[90m)[39m
+    at async DatabaseStorage.getDashboardStats [90m(/home/runner/workspace/[39mserver/storage.ts:220:27[90m)[39m
+    at async <anonymous> [90m(/home/runner/workspace/[39mserver/routes.ts:159:21[90m)[39m {
+  length: [33m75[39m,
+  severity: [32m'ERROR'[39m,
+  code: [32m'28P01'[39m,
+  detail: [90mundefined[39m,
+  hint: [90mundefined[39m,
+  position: [90mundefined[39m,
+  internalPosition: [90mundefined[39m,
+  internalQuery: [90mundefined[39m,
+  where: [90mundefined[39m,
+  schema: [90mundefined[39m,
+  table: [90mundefined[39m,
+  column: [90mundefined[39m,
+  dataType: [90mundefined[39m,
+  constraint: [90mundefined[39m,
+  file: [90mundefined[39m,
+  line: [90mundefined[39m,
+  routine: [90mundefined[39m
+}
+10:45:56 PM [express] GET /api/dashboard/stats 500 in 98ms :: {"error":"Failed to fetch dashboard stats"}
+Error fetching appointments: error: password authentication failed for user 'neondb_owner'
+    at [90mfile:///home/runner/workspace/[39mnode_modules/[4m@neondatabase/serverless[24m/index.mjs:1345:74
+[90m    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)[39m
+    at async NeonPreparedQuery.execute [90m(/home/runner/workspace/[39mnode_modules/[4msrc[24m/neon-serverless/session.ts:102:18[90m)[39m
+    at async DatabaseStorage.getAppointmentsByDate [90m(/home/runner/workspace/[39mserver/storage.ts:155:21[90m)[39m
+    at async <anonymous> [90m(/home/runner/workspace/[39mserver/routes.ts:105:24[90m)[39m {
+  length: [33m75[39m,
+  severity: [32m'ERROR'[39m,
+  code: [32m'28P01'[39m,
+  detail: [90mundefined[39m,
+  hint: [90mundefined[39m,
+  position: [90mundefined[39m,
+  internalPosition: [90mundefined[39m,
+  internalQuery: [90mundefined[39m,
+  where: [90mundefined[39m,
+  schema: [90mundefined[39m,
+  table: [90mundefined[39m,
+  column: [90mundefined[39m,
+  dataType: [90mundefined[39m,
+  constraint: [90mundefined[39m,
+  file: [90mundefined[39m,
+  line: [90mundefined[39m,
+  routine: [90mundefined[39m
+}
+10:46:06 PM [express] GET /api/appointments 500 in 61ms :: {"error":"Failed to fetch appointments"}
+Error fetching dashboard stats: error: password authentication failed for user 'neondb_owner'
+    at [90mfile:///home/runner/workspace/[39mnode_modules/[4m@neondatabase/serverless[24m/index.mjs:1345:74
+[90m    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)[39m
+    at async NeonPreparedQuery.execute [90m(/home/runner/workspace/[39mnode_modules/[4msrc[24m/neon-serverless/session.ts:102:18[90m)[39m
+    at async DatabaseStorage.getDashboardStats [90m(/home/runner/workspace/[39mserver/storage.ts:220:27[90m)[39m
+    at async <anonymous> [90m(/home/runner/workspace/[39mserver/routes.ts:159:21[90m)[39m {
+  length: [33m75[39m,
+  severity: [32m'ERROR'[39m,
+  code: [32m'28P01'[39m,
+  detail: [90mundefined[39m,
+  hint: [90mundefined[39m,
+  position: [90mundefined[39m,
+  internalPosition: [90mundefined[39m,
+  internalQuery: [90mundefined[39m,
+  where: [90mundefined[39m,
+  schema: [90mundefined[39m,
+  table: [90mundefined[39m,
+  column: [90mundefined[39m,
+  dataType: [90mundefined[39m,
+  constraint: [90mundefined[39m,
+  file: [90mundefined[39m,
+  line: [90mundefined[39m,
+  routine: [90mundefined[39m
+}
+10:46:06 PM [express] GET /api/dashboard/stats 500 in 58ms :: {"error":"Failed to fetch dashboard stats"}
