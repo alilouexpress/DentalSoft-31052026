@@ -233,7 +233,7 @@ export default function Debts() {
         ) : (
           <>
             <div className="grid gap-6 md:grid-cols-3">
-              <PageStatCard icon={Users} label={t("debt.total-debtors")} value={debtors.length} color="bg-gradient-to-br from-blue-500/10 to-blue-500/20 text-blue-500" />
+              <PageStatCard icon={Users} label={t("debt.total-debtors")} value={debtors.length} color="bg-gradient-to-br from-cyan-500/10 to-cyan-500/20 text-cyan-600" />
               <PageStatCard icon={AlertTriangle} label={t("debt.overdue-patients", { count: overdueCount })} value={overdueCount} color="bg-gradient-to-br from-red-500/10 to-red-500/20 text-red-500" />
               <PageStatCard icon={Banknote} label={t("debt.total-balance")} value={`${totalDebt.toLocaleString()} ${t("common.currency-dzd")}`} color="bg-gradient-to-br from-amber-500/10 to-amber-500/20 text-amber-500" />
             </div>

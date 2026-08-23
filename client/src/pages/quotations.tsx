@@ -306,7 +306,7 @@ export default function Quotations() {
           </div>
 
           {/* ── Quotation List ── */}
-          <div className="bg-card rounded-xl border border-border shadow-sm overflow-hidden">
+          <div className="bg-card rounded-xl border border-border shadow-sm overflow-hidden card-hover">
             <Table>
               <TableHeader>
                 <TableRow className="bg-muted/30 border-b border-border">

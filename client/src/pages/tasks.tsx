@@ -137,7 +137,7 @@ export default function Tasks() {
           </DialogContent>
         </Dialog>
 
-        <div className="bg-card rounded-xl border border-border shadow-sm overflow-hidden">
+        <div className="bg-card rounded-xl border border-border shadow-sm overflow-hidden card-hover">
           {isLoading ? (
             <div className="p-5 space-y-4">
               {[1, 2, 3, 4, 5].map(i => (

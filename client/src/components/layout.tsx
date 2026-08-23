@@ -134,7 +134,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       >
         {/* Logo */}
         <div className="h-16 flex items-center px-5 border-b" style={{ borderColor: "hsl(var(--sidebar-border))" }}>
-          <div className="h-9 w-9 rounded-lg flex items-center justify-center ms-0 me-3" style={{ backgroundColor: "hsl(var(--sidebar-primary) / 0.15)" }}>
+          <div className="h-9 w-9 rounded-xl flex items-center justify-center ms-0 me-3 shadow-sm" style={{ backgroundColor: "hsl(var(--sidebar-primary) / 0.15)" }}>
             <ThreeDIcon icon="shield" size={28} />
           </div>
           <div className="flex items-baseline gap-1.5">
@@ -157,13 +157,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <Link key={href} href={href} onClick={() => setSidebarOpen(false)}>
                 <div
                   className={cn(
-                    "flex items-center px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 cursor-pointer group",
+                    "flex items-center px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 cursor-pointer group",
                     isActive
                       ? "shadow-sm"
                       : "",
                     isActive
                       ? "text-sidebar-primary"
-                      : "text-sidebar-foreground/70 hover:text-sidebar-foreground hover:bg-sidebar-accent"
+                      : "text-sidebar-foreground/60 hover:text-sidebar-foreground hover:bg-sidebar-accent/60"
                   )}
                   style={isActive ? {
                     backgroundColor: "hsl(var(--sidebar-primary) / 0.12)",
@@ -175,7 +175,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                       "flex items-center justify-center h-8 w-8 rounded-lg transition-all duration-200 me-3",
                       isActive
                         ? ""
-                        : "group-hover:bg-sidebar-accent"
+                        : "group-hover:bg-sidebar-accent/60"
                     )}
                     style={isActive ? {
                       backgroundColor: "hsl(var(--sidebar-primary) / 0.15)"
@@ -248,7 +248,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {/* Main Content */}
       <main className="flex-1 flex flex-col min-w-0">
         {/* Header */}
-        <header className="h-16 glass-strong border-b border-border sticky top-0 z-30 flex items-center justify-between px-4 lg:px-6">
+        <header className="h-16 glass-strong border-b border-border/50 sticky top-0 z-30 flex items-center justify-between px-4 lg:px-6">
           <div className="flex items-center gap-3">
             <Button
               variant="ghost"

@@ -197,7 +197,7 @@ export default function Appointments() {
           </div>
         </div>
 
-        <div className="flex-1 bg-card rounded-xl border border-border shadow-sm overflow-hidden flex flex-col">
+        <div className="flex-1 bg-card rounded-xl border border-border shadow-sm overflow-hidden flex flex-col card-hover">
           {isLoading ? (
             <div className="flex-1 flex items-center justify-center p-6">
               <div className="space-y-4 w-full">
