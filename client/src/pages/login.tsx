@@ -39,7 +39,7 @@ export default function Login() {
   return (
     <div className="min-h-screen flex">
       {/* LEFT PANEL — Branding */}
-      <div className="hidden lg:flex lg:w-1/2 relative bg-gradient-to-br from-cyan-600 via-cyan-700 to-teal-800 overflow-hidden">
+      <div className="hidden lg:flex lg:w-1/2 relative bg-gradient-to-br from-sky-500 via-sky-700 to-sky-900 overflow-hidden">
         <div className="absolute inset-0 opacity-[0.07]">
           <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
             <defs>
@@ -51,9 +51,9 @@ export default function Login() {
           </svg>
         </div>
         <div className="absolute top-20 left-20 w-40 h-40 bg-white/5 rounded-3xl rotate-12 animate-float" />
-        <div className="absolute bottom-32 right-16 w-28 h-28 bg-white/5 rounded-full animate-float" style={{ animationDelay: "1s" }} />
+        <div className="absolute bottom-32 right-16 w-28 h-28 bg-amber-400/15 rounded-full animate-float" style={{ animationDelay: "1s" }} />
         <div className="absolute top-1/2 left-8 w-20 h-20 bg-white/5 rounded-2xl -rotate-12 animate-float" style={{ animationDelay: "2s" }} />
-        <div className="absolute top-40 right-32 w-16 h-16 bg-white/5 rounded-xl rotate-45 animate-float" style={{ animationDelay: "3s" }} />
+        <div className="absolute top-40 right-32 w-16 h-16 bg-amber-300/10 rounded-xl rotate-45 animate-float" style={{ animationDelay: "3s" }} />
         <div className="relative z-10 flex flex-col justify-center px-16 text-white">
           <div className="mb-8">
             <div className="h-16 w-16 rounded-2xl bg-white/15 backdrop-blur-sm flex items-center justify-center mb-6 ring-1 ring-white/20 shadow-lg shadow-black/10">
@@ -64,11 +64,11 @@ export default function Login() {
               </svg>
             </div>
             <h1 className="text-4xl font-bold tracking-tight mb-3">DentalSoft</h1>
-            <p className="text-lg text-cyan-100/80 max-w-md leading-relaxed">
+            <p className="text-lg text-sky-100/80 max-w-md leading-relaxed">
               Gestion dentaire intelligente. Simple, rapide, fiable.
             </p>
           </div>
-          <div className="space-y-4 text-cyan-100/60 text-sm">
+          <div className="space-y-4 text-sky-100/60 text-sm">
             <div className="flex items-center gap-3">
               <div className="h-8 w-8 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
@@ -92,10 +92,10 @@ export default function Login() {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/20 to-transparent" />
       </div>
       {/* RIGHT PANEL — Login Form */}
-      <div className="flex-1 flex items-center justify-center p-8 bg-gradient-to-br from-slate-50 via-white to-cyan-50/30">
+      <div className="flex-1 flex items-center justify-center p-8 bg-gradient-to-br from-slate-50 via-white to-sky-50/30">
         <div className="w-full max-w-md">
           <div className="lg:hidden flex items-center gap-3 mb-8">
-            <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-cyan-600 to-cyan-700 flex items-center justify-center text-white shadow-lg shadow-cyan-600/25">
+            <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-sky-600 to-sky-700 flex items-center justify-center text-white shadow-lg shadow-sky-600/25">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 2L3 7v10l9 5 9-5V7l-9-5z"/></svg>
             </div>
             <span className="text-xl font-bold text-foreground">DentalSoft</span>
@@ -128,7 +128,7 @@ export default function Login() {
                 <span>{error}</span>
               </div>
             )}
-            <Button type="submit" disabled={loading} className="w-full h-11 text-base font-semibold bg-gradient-to-r from-cyan-600 to-cyan-700 hover:from-cyan-700 hover:to-cyan-800 shadow-lg shadow-cyan-600/25 transition-all duration-200 hover:shadow-xl hover:shadow-cyan-600/30 hover:-translate-y-0.5 cursor-pointer">
+            <Button type="submit" disabled={loading} className="w-full h-11 text-base font-semibold bg-gradient-to-r from-sky-600 to-sky-700 hover:from-sky-700 hover:to-sky-800 shadow-lg shadow-sky-600/25 transition-all duration-200 hover:shadow-xl hover:shadow-sky-600/30 hover:-translate-y-0.5 cursor-pointer">
               {loading ? (
                 <span className="flex items-center gap-2">
                   <Loader2 className="h-4 w-4 animate-spin" />

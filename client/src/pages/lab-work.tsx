@@ -80,7 +80,7 @@ export default function LabWork() {
 
         <div className="grid gap-4 grid-cols-2 lg:grid-cols-4">
           {[
-            { label: t("lab.total"), value: stats.total, icon: FlaskConical, color: "bg-cyan-50 text-cyan-600" },
+            { label: t("lab.total"), value: stats.total, icon: FlaskConical, color: "bg-sky-50 text-sky-600" },
             { label: t("lab.in-progress"), value: stats.inProgress, icon: Clock, color: "bg-amber-50 text-amber-600" },
             { label: t("lab.completed"), value: stats.completed, icon: CheckCircle2, color: "bg-emerald-50 text-emerald-600" },
             { label: t("lab.urgent"), value: stats.urgent, icon: AlertCircle, color: "bg-red-50 text-red-600" },
