@@ -74,7 +74,7 @@ export const patients = pgTable("patients", {
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
 
-export const insertPatientSchema = createInsertSchema(patients).omit({ id: true, createdAt: true, patientId: true });
+export const insertPatientSchema = createInsertSchema(patients, { age: (schema) => schema.min(0) }).omit({ id: true, createdAt: true, patientId: true });
 export type InsertPatient = z.infer<typeof insertPatientSchema>;
 export type Patient = typeof patients.$inferSelect;
 
