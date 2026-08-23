@@ -138,7 +138,7 @@ export default function Billing() {
             icon={Banknote}
             label={t("billing.total-revenue")}
             value={`${Math.round(totalRevenue).toLocaleString()} DA`}
-            color="bg-gradient-to-br from-cyan-500/10 to-cyan-500/20 text-cyan-600"
+            color="bg-gradient-to-br from-sky-500/10 to-sky-500/20 text-sky-600"
             premium
             loading={isLoading}
           />

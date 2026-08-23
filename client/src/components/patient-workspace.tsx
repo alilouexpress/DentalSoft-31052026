@@ -46,7 +46,7 @@ function CollapsibleSection({ title, icon: Icon, defaultOpen = true, children }:
   return (
     <div className="border-b border-slate-100 last:border-0">
       <button onClick={() => setOpen(!open)} className="flex items-center gap-2 w-full py-2.5 px-1 cursor-pointer transition-colors hover:bg-muted/50 rounded-md border-0 bg-transparent text-left">
-        <Icon className="h-3.5 w-3.5 text-cyan-600 shrink-0" />
+        <Icon className="h-3.5 w-3.5 text-sky-600 shrink-0" />
         <span className="text-xs font-bold text-slate-700 uppercase tracking-wider flex-1">{title}</span>
         {open ? <ChevronDown className="h-3.5 w-3.5 text-slate-400" /> : <ChevronRight className="h-3.5 w-3.5 text-slate-400" />}
       </button>
@@ -209,7 +209,7 @@ export function PatientWorkspace({ patientId }: PatientWorkspaceProps) {
         <div className="space-y-2">
           {patientTimeline.map((log: any) => (
             <div key={log.id} className="flex items-start gap-3 p-3 bg-white rounded-lg border border-slate-200">
-              <div className="mt-1.5"><div className="h-2 w-2 rounded-full bg-cyan-500" /></div>
+              <div className="mt-1.5"><div className="h-2 w-2 rounded-full bg-sky-500" /></div>
               <div className="flex-1 min-w-0">
                 <p className="text-xs text-slate-500">{format(new Date(log.createdAt), "dd/MM/yyyy HH:mm")}</p>
                 <p className="text-sm font-medium text-slate-800">{log.action} {log.entityName ? `- ${log.entityName}` : ""}</p>
@@ -253,17 +253,17 @@ export function PatientWorkspace({ patientId }: PatientWorkspaceProps) {
       {/* ════════════════════════════════════════════════════════════
           HEADER — Premium patient identity card
           ════════════════════════════════════════════════════════════ */}
-      <div className="relative bg-gradient-to-br from-white via-white to-cyan-50/30 dark:from-slate-900 dark:via-slate-900 dark:to-cyan-950/20 rounded-2xl border border-slate-200/80 dark:border-slate-700/50 shadow-lg shadow-cyan-500/5 overflow-hidden">
+      <div className="relative bg-gradient-to-br from-white via-white to-sky-50/30 dark:from-slate-900 dark:via-slate-900 dark:to-sky-950/20 rounded-2xl border border-slate-200/80 dark:border-slate-700/50 shadow-lg shadow-sky-500/5 overflow-hidden">
         {/* Animated gradient accent stripe */}
-        <div className="h-1.5 bg-gradient-to-r from-cyan-400 via-cyan-500 to-emerald-500" style={{ backgroundSize: '200% 100%', animation: 'shimmer 3s ease-in-out infinite' }} />
+        <div className="h-1.5 bg-gradient-to-r from-sky-400 via-sky-500 to-emerald-500" style={{ backgroundSize: '200% 100%', animation: 'shimmer 3s ease-in-out infinite' }} />
 
         <div className="p-6 sm:p-7 space-y-5">
           {/* Avatar + Identity */}
           <div className="flex gap-5 sm:gap-6">
             <div className="relative group">
-              <Avatar className="h-[88px] w-[88px] border-[3px] border-white dark:border-slate-700 shadow-lg shadow-cyan-500/20 shrink-0 ring-2 ring-cyan-500/20 transition-transform duration-300 group-hover:scale-105">
+              <Avatar className="h-[88px] w-[88px] border-[3px] border-white dark:border-slate-700 shadow-lg shadow-sky-500/20 shrink-0 ring-2 ring-sky-500/20 transition-transform duration-300 group-hover:scale-105">
                 <AvatarImage src={patient.photoUrl || undefined} />
-                <AvatarFallback className="text-2xl font-black bg-gradient-to-br from-cyan-500 via-cyan-600 to-emerald-600 text-white">{initials}</AvatarFallback>
+                <AvatarFallback className="text-2xl font-black bg-gradient-to-br from-sky-500 via-sky-600 to-emerald-600 text-white">{initials}</AvatarFallback>
               </Avatar>
               <div className={`absolute -bottom-1 -right-1 h-5 w-5 rounded-full border-[3px] border-white dark:border-slate-800 shadow-sm ${patient.status === "Active" || patient.status === "active" ? "bg-emerald-500" : "bg-slate-400"
                 }`} />
@@ -279,16 +279,16 @@ export function PatientWorkspace({ patientId }: PatientWorkspaceProps) {
                 </Badge>
               </div>
               <div className="flex items-center gap-2.5 text-sm text-slate-500 dark:text-slate-400 flex-wrap">
-                <span className="font-mono font-bold text-cyan-600 dark:text-cyan-400 bg-cyan-50 dark:bg-cyan-900/30 px-2 py-0.5 rounded-md text-xs">{patient.patientId}</span>
+                <span className="font-mono font-bold text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-900/30 px-2 py-0.5 rounded-md text-xs">{patient.patientId}</span>
                 <span className="text-slate-300 dark:text-slate-600">|</span>
                 <span className="font-medium">{patient.age} ans</span>
                 <span className="text-slate-300 dark:text-slate-600">|</span>
                 <span className="font-medium">{patient.gender === "Male" ? "Homme" : "Femme"}</span>
-                {patient.phone && <><span className="text-slate-300 dark:text-slate-600">|</span><span className="flex items-center gap-1.5 font-medium"><Phone className="h-3.5 w-3.5 text-cyan-500" />{patient.phone}</span></>}
+                {patient.phone && <><span className="text-slate-300 dark:text-slate-600">|</span><span className="flex items-center gap-1.5 font-medium"><Phone className="h-3.5 w-3.5 text-sky-500" />{patient.phone}</span></>}
               </div>
               {patient.email && (
                 <div className="flex items-center gap-1.5 text-sm text-slate-500 dark:text-slate-400">
-                  <Mail className="h-3.5 w-3.5 text-cyan-500" />
+                  <Mail className="h-3.5 w-3.5 text-sky-500" />
                   <span className="font-medium">{patient.email}</span>
                 </div>
               )}
@@ -305,9 +305,9 @@ export function PatientWorkspace({ patientId }: PatientWorkspaceProps) {
                 )}
               </div>
               <div className="flex items-center gap-3 text-sm text-slate-500 dark:text-slate-400 flex-wrap pt-0.5">
-                <span className="flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5 text-cyan-500" /><span className="font-semibold text-slate-600 dark:text-slate-300">Dernière visite:</span> {patient.lastVisit ? format(new Date(patient.lastVisit), "dd/MM/yyyy") : <span className="italic text-slate-400">Aucune</span>}</span>
+                <span className="flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5 text-sky-500" /><span className="font-semibold text-slate-600 dark:text-slate-300">Dernière visite:</span> {patient.lastVisit ? format(new Date(patient.lastVisit), "dd/MM/yyyy") : <span className="italic text-slate-400">Aucune</span>}</span>
                 <span className="text-slate-300 dark:text-slate-600">|</span>
-                <span className="flex items-center gap-1.5"><CalendarCheck className="h-3.5 w-3.5 text-cyan-500" /><span className="font-semibold text-slate-600 dark:text-slate-300">Prochain RDV:</span> <span className="italic text-slate-400">Aucun</span></span>
+                <span className="flex items-center gap-1.5"><CalendarCheck className="h-3.5 w-3.5 text-sky-500" /><span className="font-semibold text-slate-600 dark:text-slate-300">Prochain RDV:</span> <span className="italic text-slate-400">Aucun</span></span>
               </div>
             </div>
           </div>
@@ -327,17 +327,17 @@ export function PatientWorkspace({ patientId }: PatientWorkspaceProps) {
 
           {/* Action buttons */}
           <div className="flex items-center gap-2 flex-wrap">
-            <Button variant="outline" size="sm" className="h-9 gap-1.5 text-sm border-cyan-200 dark:border-cyan-800 text-cyan-700 dark:text-cyan-400 hover:bg-cyan-50 dark:hover:bg-cyan-950/30 cursor-pointer transition-all duration-200 hover:shadow-sm hover:-translate-y-px" onClick={() => patient.phone && window.open(`tel:${patient.phone}`)}><Phone className="h-3.5 w-3.5" /> Appeler</Button>
-            <Button variant="outline" size="sm" className="h-9 gap-1.5 text-sm border-cyan-200 dark:border-cyan-800 text-cyan-700 dark:text-cyan-400 hover:bg-cyan-50 dark:hover:bg-cyan-950/30 cursor-pointer transition-all duration-200 hover:shadow-sm hover:-translate-y-px" onClick={() => patient.email && window.open(`mailto:${patient.email}`)}><Mail className="h-3.5 w-3.5" /> Email</Button>
-            <Button size="sm" className="h-9 gap-1.5 text-sm bg-gradient-to-r from-cyan-600 to-cyan-700 hover:from-cyan-700 hover:to-cyan-800 text-white cursor-pointer shadow-md shadow-cyan-500/25 transition-all duration-200 hover:shadow-lg hover:shadow-cyan-500/30 hover:-translate-y-px" onClick={() => setRdvOpen(true)}><CalendarPlus className="h-3.5 w-3.5" /> Nouveau RDV</Button>
-            <Button variant="outline" size="sm" className="h-9 gap-1.5 text-sm border-cyan-200 dark:border-cyan-800 text-cyan-700 dark:text-cyan-400 hover:bg-cyan-50 dark:hover:bg-cyan-950/30 cursor-pointer transition-all duration-200 hover:shadow-sm hover:-translate-y-px" onClick={() => { setEditForm({ phone: patient.phone || "", email: patient.email || "", address: patient.address || "", bloodType: patient.bloodType || "", nationalId: patient.nationalId || "", emergencyContact: patient.emergencyContact || "", emergencyPhone: patient.emergencyPhone || "", insuranceProvider: patient.insuranceProvider || "", insuranceNumber: patient.insuranceNumber || "", notes: patient.notes || "" }); setEditOpen(true); }}><FileEdit className="h-3.5 w-3.5" /> Modifier</Button>
+            <Button variant="outline" size="sm" className="h-9 gap-1.5 text-sm border-sky-200 dark:border-sky-800 text-sky-700 dark:text-sky-400 hover:bg-sky-50 dark:hover:bg-sky-950/30 cursor-pointer transition-all duration-200 hover:shadow-sm hover:-translate-y-px" onClick={() => patient.phone && window.open(`tel:${patient.phone}`)}><Phone className="h-3.5 w-3.5" /> Appeler</Button>
+            <Button variant="outline" size="sm" className="h-9 gap-1.5 text-sm border-sky-200 dark:border-sky-800 text-sky-700 dark:text-sky-400 hover:bg-sky-50 dark:hover:bg-sky-950/30 cursor-pointer transition-all duration-200 hover:shadow-sm hover:-translate-y-px" onClick={() => patient.email && window.open(`mailto:${patient.email}`)}><Mail className="h-3.5 w-3.5" /> Email</Button>
+            <Button size="sm" className="h-9 gap-1.5 text-sm bg-gradient-to-r from-sky-600 to-sky-700 hover:from-sky-700 hover:to-sky-800 text-white cursor-pointer shadow-md shadow-sky-500/25 transition-all duration-200 hover:shadow-lg hover:shadow-sky-500/30 hover:-translate-y-px" onClick={() => setRdvOpen(true)}><CalendarPlus className="h-3.5 w-3.5" /> Nouveau RDV</Button>
+            <Button variant="outline" size="sm" className="h-9 gap-1.5 text-sm border-sky-200 dark:border-sky-800 text-sky-700 dark:text-sky-400 hover:bg-sky-50 dark:hover:bg-sky-950/30 cursor-pointer transition-all duration-200 hover:shadow-sm hover:-translate-y-px" onClick={() => { setEditForm({ phone: patient.phone || "", email: patient.email || "", address: patient.address || "", bloodType: patient.bloodType || "", nationalId: patient.nationalId || "", emergencyContact: patient.emergencyContact || "", emergencyPhone: patient.emergencyPhone || "", insuranceProvider: patient.insuranceProvider || "", insuranceNumber: patient.insuranceNumber || "", notes: patient.notes || "" }); setEditOpen(true); }}><FileEdit className="h-3.5 w-3.5" /> Modifier</Button>
             <Button variant="outline" size="sm" className="h-9 gap-1.5 text-sm border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer transition-all duration-200" onClick={() => window.print()}><Printer className="h-3.5 w-3.5" /> Imprimer</Button>
           </div>
 
           {/* Balance — Premium glassmorphism card */}
           <div className={`relative rounded-xl p-4 flex items-center justify-between overflow-hidden ${hasBalance
             ? "bg-gradient-to-r from-red-50 to-rose-50/50 dark:from-red-950/20 dark:to-rose-950/10 border border-red-200/60 dark:border-red-800/30"
-            : "bg-gradient-to-r from-emerald-50 to-cyan-50/50 dark:from-emerald-950/20 dark:to-cyan-950/10 border border-emerald-200/60 dark:border-emerald-800/30"
+            : "bg-gradient-to-r from-emerald-50 to-sky-50/50 dark:from-emerald-950/20 dark:to-sky-950/10 border border-emerald-200/60 dark:border-emerald-800/30"
             }`}>
             <div className="flex items-center gap-3">
               <div className={`h-10 w-10 rounded-xl flex items-center justify-center ${hasBalance
@@ -381,15 +381,15 @@ export function PatientWorkspace({ patientId }: PatientWorkspaceProps) {
                 onClick={() => setTab(tab.value)}
                 className={`group relative flex items-center gap-2 min-w-[120px] px-5 py-3.5 text-sm font-bold whitespace-nowrap transition-all duration-300 cursor-pointer shrink-0
                   ${isActive
-                    ? "text-cyan-700 dark:text-cyan-400"
+                    ? "text-sky-700 dark:text-sky-400"
                     : "text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300 hover:bg-slate-50/60 dark:hover:bg-slate-800/40"
                   }`}
               >
-                <Icon className={`h-4 w-4 transition-colors duration-300 ${isActive ? "text-cyan-600 dark:text-cyan-400" : "text-slate-400 dark:text-slate-500 group-hover:text-slate-500 dark:group-hover:text-slate-400"}`} />
+                <Icon className={`h-4 w-4 transition-colors duration-300 ${isActive ? "text-sky-600 dark:text-sky-400" : "text-slate-400 dark:text-slate-500 group-hover:text-slate-500 dark:group-hover:text-slate-400"}`} />
                 {tab.label}
                 {badge && (
                   <Badge className={`ml-0.5 text-[10px] px-1.5 py-0 font-bold rounded-full border-0 transition-colors duration-300 ${isActive
-                    ? "bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-400"
+                    ? "bg-sky-100 dark:bg-sky-900/30 text-sky-700 dark:text-sky-400"
                     : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400"
                     }`}>
                     {badge.count}
@@ -397,7 +397,7 @@ export function PatientWorkspace({ patientId }: PatientWorkspaceProps) {
                 )}
                 {/* Active indicator bar */}
                 <span className={`absolute bottom-0 left-2 right-2 h-[3px] rounded-full transition-all duration-300 ${isActive
-                  ? "bg-gradient-to-r from-cyan-500 to-emerald-500 opacity-100"
+                  ? "bg-gradient-to-r from-sky-500 to-emerald-500 opacity-100"
                   : "bg-transparent opacity-0 group-hover:bg-slate-300 group-hover:opacity-40"
                   }`} />
               </button>
@@ -420,16 +420,16 @@ export function PatientWorkspace({ patientId }: PatientWorkspaceProps) {
         <div className="space-y-4">
 
           {/* CARD 1: Résumé Clinique */}
-          <Card className="border-slate-200/80 dark:border-slate-700/50 shadow-md shadow-cyan-500/5 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10">
-            <div className="h-1 bg-gradient-to-r from-cyan-400 via-cyan-500 to-emerald-500" />
+          <Card className="border-slate-200/80 dark:border-slate-700/50 shadow-md shadow-sky-500/5 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-sky-500/10">
+            <div className="h-1 bg-gradient-to-r from-sky-400 via-sky-500 to-emerald-500" />
             <CardContent className="p-5">
               <div
                 className={`flex items-center justify-between ${isMobile ? "cursor-pointer select-none mb-2" : "mb-4"}`}
                 onClick={() => toggleCard("summary")}
               >
                 <div className="flex items-center gap-2.5">
-                  <div className="h-7 w-7 rounded-lg bg-cyan-100 dark:bg-cyan-900/30 flex items-center justify-center">
-                    <Activity className="h-3.5 w-3.5 text-cyan-600 dark:text-cyan-400" />
+                  <div className="h-7 w-7 rounded-lg bg-sky-100 dark:bg-sky-900/30 flex items-center justify-center">
+                    <Activity className="h-3.5 w-3.5 text-sky-600 dark:text-sky-400" />
                   </div>
                   <span className="text-xs font-black uppercase tracking-widest text-slate-500 dark:text-slate-400">Résumé Clinique</span>
                 </div>
@@ -491,7 +491,7 @@ export function PatientWorkspace({ patientId }: PatientWorkspaceProps) {
                     <CalendarCheck className="h-8 w-8 text-slate-300 dark:text-slate-600 mx-auto mb-2" />
                     <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">Aucun rendez-vous planifié</p>
                   </div>
-                  <Button size="sm" className="w-full h-9 gap-1.5 bg-gradient-to-r from-cyan-600 to-cyan-700 hover:from-cyan-700 hover:to-cyan-800 text-white text-sm cursor-pointer shadow-md shadow-cyan-500/20 transition-all duration-200 hover:shadow-lg" onClick={() => setRdvOpen(true)}><CalendarPlus className="h-3.5 w-3.5" /> Planifier un RDV</Button>
+                  <Button size="sm" className="w-full h-9 gap-1.5 bg-gradient-to-r from-sky-600 to-sky-700 hover:from-sky-700 hover:to-sky-800 text-white text-sm cursor-pointer shadow-md shadow-sky-500/20 transition-all duration-200 hover:shadow-lg" onClick={() => setRdvOpen(true)}><CalendarPlus className="h-3.5 w-3.5" /> Planifier un RDV</Button>
                 </div>
               )}
             </CardContent>
@@ -522,7 +522,7 @@ export function PatientWorkspace({ patientId }: PatientWorkspaceProps) {
                         <Activity className="h-8 w-8 text-slate-300 dark:text-slate-600 mx-auto mb-2" />
                         <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">Aucun traitement actif</p>
                       </div>
-                      <Button size="sm" variant="outline" className="w-full h-9 gap-1.5 text-sm text-cyan-700 dark:text-cyan-400 border-cyan-200 dark:border-cyan-800 hover:bg-cyan-50 dark:hover:bg-cyan-950/30 cursor-pointer transition-all duration-200" onClick={() => setTab("treatment-plan")}><Plus className="h-3.5 w-3.5" /> Créer un plan de soins</Button>
+                      <Button size="sm" variant="outline" className="w-full h-9 gap-1.5 text-sm text-sky-700 dark:text-sky-400 border-sky-200 dark:border-sky-800 hover:bg-sky-50 dark:hover:bg-sky-950/30 cursor-pointer transition-all duration-200" onClick={() => setTab("treatment-plan")}><Plus className="h-3.5 w-3.5" /> Créer un plan de soins</Button>
                     </div>
                   ) : (
                     <div className="space-y-2">
@@ -535,7 +535,7 @@ export function PatientWorkspace({ patientId }: PatientWorkspaceProps) {
                               {t.status === "in_progress" ? "En cours" : "Planifié"}
                             </Badge>
                           </div>
-                          <Button variant="ghost" size="icon" className="h-7 w-7 shrink-0 cursor-pointer hover:bg-cyan-50 dark:hover:bg-cyan-900/30" onClick={() => setTab("treatment-plan")} aria-label="Voir le plan de soins"><Eye className="h-3.5 w-3.5 text-slate-500 dark:text-slate-400" /></Button>
+                          <Button variant="ghost" size="icon" className="h-7 w-7 shrink-0 cursor-pointer hover:bg-sky-50 dark:hover:bg-sky-900/30" onClick={() => setTab("treatment-plan")} aria-label="Voir le plan de soins"><Eye className="h-3.5 w-3.5 text-slate-500 dark:text-slate-400" /></Button>
                         </div>
                       ))}
                     </div>
@@ -613,7 +613,7 @@ export function PatientWorkspace({ patientId }: PatientWorkspaceProps) {
                         <Banknote className="h-8 w-8 text-slate-300 dark:text-slate-600 mx-auto mb-2" />
                         <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">Aucun paiement</p>
                       </div>
-                      <Button size="sm" variant="outline" className="w-full h-9 gap-1.5 text-sm text-cyan-700 dark:text-cyan-400 border-cyan-200 dark:border-cyan-800 hover:bg-cyan-50 dark:hover:bg-cyan-950/30 cursor-pointer transition-all duration-200" onClick={() => { setPaymentToEdit(null); setPaymentOpen(true); }}><Plus className="h-3.5 w-3.5" /> Ajouter un paiement</Button>
+                      <Button size="sm" variant="outline" className="w-full h-9 gap-1.5 text-sm text-sky-700 dark:text-sky-400 border-sky-200 dark:border-sky-800 hover:bg-sky-50 dark:hover:bg-sky-950/30 cursor-pointer transition-all duration-200" onClick={() => { setPaymentToEdit(null); setPaymentOpen(true); }}><Plus className="h-3.5 w-3.5" /> Ajouter un paiement</Button>
                     </div>
                   ) : (
                     <div className="space-y-2">
@@ -647,8 +647,8 @@ export function PatientWorkspace({ patientId }: PatientWorkspaceProps) {
                         );
                       })}
                       <div className="flex items-center gap-2 pt-1">
-                        <Button size="sm" variant="ghost" className="flex-1 h-8 text-xs font-semibold text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 hover:bg-cyan-50 dark:hover:bg-cyan-950/30 cursor-pointer" onClick={() => setTab("payments")}>Voir tout ({patientPayments.length})</Button>
-                        <Button size="sm" variant="outline" className="h-8 gap-1 text-xs text-cyan-700 dark:text-cyan-400 border-cyan-200 dark:border-cyan-800 hover:bg-cyan-50 dark:hover:bg-cyan-950/30 cursor-pointer" onClick={() => { setPaymentToEdit(null); setPaymentOpen(true); }}><Plus className="h-3 w-3" /> Ajouter</Button>
+                        <Button size="sm" variant="ghost" className="flex-1 h-8 text-xs font-semibold text-sky-600 dark:text-sky-400 hover:text-sky-700 hover:bg-sky-50 dark:hover:bg-sky-950/30 cursor-pointer" onClick={() => setTab("payments")}>Voir tout ({patientPayments.length})</Button>
+                        <Button size="sm" variant="outline" className="h-8 gap-1 text-xs text-sky-700 dark:text-sky-400 border-sky-200 dark:border-sky-800 hover:bg-sky-50 dark:hover:bg-sky-950/30 cursor-pointer" onClick={() => { setPaymentToEdit(null); setPaymentOpen(true); }}><Plus className="h-3 w-3" /> Ajouter</Button>
                       </div>
                     </div>
                   )}
