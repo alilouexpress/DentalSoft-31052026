@@ -235,7 +235,7 @@ export function PatientPaymentDialog({ open, onOpenChange, patientId, patientNam
       <DialogContent className="sm:max-w-md max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
-            <Banknote className="h-4 w-4 text-teal-600" />
+            <Banknote className="h-4 w-4 text-cyan-600" />
             {isEditing ? "Modifier le paiement" : "Nouveau Paiement"}
           </DialogTitle>
         </DialogHeader>
@@ -252,7 +252,7 @@ export function PatientPaymentDialog({ open, onOpenChange, patientId, patientNam
                 placeholder="15 000,00"
                 className={`h-10 text-lg font-bold text-right tabular-nums pr-14 ${errors.amount ? "border-red-500" : ""}`}
               />
-              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-sm font-bold text-teal-600 pointer-events-none">DA</span>
+              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-sm font-bold text-cyan-600 pointer-events-none">DA</span>
             </div>
             {errors.amount && <p className="text-xs text-red-600">{errors.amount}</p>}
           </div>
@@ -369,7 +369,7 @@ export function PatientPaymentDialog({ open, onOpenChange, patientId, patientNam
             </Button>
           )}
           <Button variant="outline" size="sm" onClick={() => onOpenChange(false)} className="cursor-pointer">Annuler</Button>
-          <Button size="sm" onClick={handleSave} disabled={saving || unpaidInvoices.length === 0} className="bg-teal-600 hover:bg-teal-700 text-white cursor-pointer gap-1.5">
+          <Button size="sm" onClick={handleSave} disabled={saving || unpaidInvoices.length === 0} className="bg-cyan-600 hover:bg-cyan-700 text-white cursor-pointer gap-1.5">
             {isEditing ? "Enregistrer" : <><Printer className="h-3.5 w-3.5" /> {saving ? "Enregistrement..." : "Enregistrer & imprimer"}</>}
           </Button>
         </DialogFooter>

@@ -41,7 +41,7 @@ export function PageStatCard({
   }
 
   return (
-    <Card className={cn("card-hover", premium && "card-glow", className)}>
+    <Card className={cn("card-hover overflow-hidden", premium && "card-glow", className)}>
       <CardContent className="p-5 flex items-center gap-4">
         <div className={cn("h-12 w-12 rounded-xl flex items-center justify-center shrink-0", color)}>
           <Icon className="h-6 w-6" />

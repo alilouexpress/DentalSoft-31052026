@@ -201,7 +201,7 @@ export default function Patients() {
           ] as const).map((stat, i) => {
             const Icon = stat.icon;
             return (
-              <Card key={i} className="border-border/40 shadow-sm overflow-hidden">
+              <Card key={i} className="card-hover border-border/40 shadow-sm overflow-hidden">
                 <CardContent className="p-3 sm:p-4 flex items-center gap-3">
                   <div className={`p-2 rounded-lg bg-gradient-to-br ${stat.color} text-white shadow-sm`}>
                     <Icon className="h-4 w-4" />
@@ -375,7 +375,7 @@ export default function Patients() {
                   className={cn(
                     "h-8 px-3 text-xs font-medium rounded-full transition-all duration-200 cursor-pointer",
                     statusFilter === status && status === "Active" && "bg-emerald-500 text-white hover:bg-emerald-600 border-emerald-500",
-                    statusFilter === status && status === "Treatment" && "bg-sky-500 text-white hover:bg-sky-600 border-sky-500",
+                    statusFilter === status && status === "Treatment" && "bg-cyan-600 text-white hover:bg-cyan-700 border-sky-500",
                     statusFilter === status && status === "Inactive" && "bg-slate-500 text-white hover:bg-slate-600 border-slate-500",
                     statusFilter === status && status === "all" && "bg-primary text-primary-foreground hover:bg-primary/90"
                   )}
@@ -388,7 +388,7 @@ export default function Patients() {
           </div>
         </div>
 
-        <div className="bg-card rounded-xl border border-border shadow-sm overflow-hidden">
+        <div className="bg-card card-hover rounded-xl border border-border shadow-sm overflow-hidden">
           {isLoading ? (
             <div className="p-5 space-y-4">
               {[1, 2, 3, 4, 5].map(i => (

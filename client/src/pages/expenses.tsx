@@ -208,7 +208,7 @@ export default function Expenses() {
             icon={Banknote}
             label={t("expenses.total")}
             value={`${totalExpenses.toLocaleString()} DA`}
-            color="bg-gradient-to-br from-sky-500/10 to-sky-500/20 text-sky-600"
+            color="bg-gradient-to-br from-cyan-500/10 to-cyan-500/20 text-cyan-600"
             premium
             loading={isLoading}
           />

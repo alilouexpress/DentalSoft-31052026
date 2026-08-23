@@ -91,7 +91,7 @@ export default function Dashboard() {
             icon={Users}
             label={t("dashboard.total-patients")}
             value={stats?.totalPatients ?? 0}
-            color="bg-gradient-to-br from-emerald-500/10 to-emerald-500/20 text-emerald-600"
+            color="bg-gradient-to-br from-cyan-500/10 to-cyan-500/20 text-cyan-600"
             premium
             loading={statsLoading}
           />
@@ -99,7 +99,7 @@ export default function Dashboard() {
             icon={Calendar}
             label={t("dashboard.today-appointments")}
             value={todayAppointments.length}
-            color="bg-gradient-to-br from-sky-500/10 to-sky-500/20 text-sky-600"
+            color="bg-gradient-to-br from-emerald-500/10 to-emerald-500/20 text-emerald-600"
             loading={appointmentsLoading}
           />
           <PageStatCard

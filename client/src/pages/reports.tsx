@@ -115,7 +115,7 @@ export default function Reports() {
             icon={DollarSign}
             label={t("reports.this-month")}
             value={`${Math.round(totalRevenue).toLocaleString()} DA`}
-            color="bg-emerald-50 text-emerald-600"
+            color="bg-cyan-50 text-cyan-600"
             premium
             loading={loading}
           />
@@ -123,7 +123,7 @@ export default function Reports() {
             icon={Calendar}
             label={t("reports.last-month")}
             value={`${Math.round(totalRevenue * 0.9).toLocaleString()} DA`}
-            color="bg-sky-50 text-sky-600"
+            color="bg-emerald-50 text-emerald-600"
             trend="-10%"
             trendUp={false}
             loading={loading}
