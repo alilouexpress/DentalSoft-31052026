@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeAll, afterAll } from "vitest";
-import { startTestServer, login, type TestServer } from "./helpers";
+import { startTestServer, login, authHeaders, getAuthHeaders, type TestServer } from "./helpers";
 
 let srv: TestServer;
 
@@ -63,5 +63,16 @@ describe("GET /api/auth/me", () => {
       headers: { Authorization: "Bearer token-fabrique" },
     });
     expect(res.status).toBe(401);
+  });
+});
+
+describe("GET /api/health", () => {
+  it("est public : 200 sans token", async () => {
+    const res = await fetch(`${srv.baseUrl}/api/health`);
+    expect(res.status).toBe(200);
+    const body = (await res.json()) as { status: string; uptime: number; timestamp: string };
+    expect(body.status).toBe("ok");
+    expect(typeof body.uptime).toBe("number");
+    expect(Number.isNaN(Date.parse(body.timestamp))).toBe(false);
   });
 });

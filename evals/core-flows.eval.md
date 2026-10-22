@@ -2,7 +2,7 @@
 
 Chaque scénario est exécutable manuellement ou automatiquement :
 - `npm test` → tests unitaires (16) — tourne en CI (sans base de données).
-- `npm run test:int` → tests d'intégration (15) sur la vraie API + base Postgres locale — **hors CI** (nécessite `.env` avec `DATABASE_URL`).
+- `npm run test:int` → tests d'intégration (16) sur la vraie API + base Postgres locale — **hors CI** (nécessite `.env` avec `DATABASE_URL`).
 Statut attendu documenté de façon déterministe (HTTP + état base).
 
 ## 1. Validation patient — âge négatif

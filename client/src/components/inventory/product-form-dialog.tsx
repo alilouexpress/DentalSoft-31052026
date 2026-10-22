@@ -30,6 +30,8 @@ export function ProductFormDialog({ open, onOpenChange, product }: ProductFormDi
   const { data: suppliers = [] } = useInventorySuppliers();
   const { data: products = [] } = useInventoryProducts();
   const [form, setForm] = useState<Partial<InsertInventoryProduct>>(defaultForm());
+  const [showCategoryInput, setShowCategoryInput] = useState(false);
+  const [customCategory, setCustomCategory] = useState("");
 
   const categories = [...new Set(products.map(p => p.category).filter(Boolean))] as string[];
   const isSaving = createProduct.isPending || updateProduct.isPending;
@@ -43,8 +45,13 @@ export function ProductFormDialog({ open, onOpenChange, product }: ProductFormDi
         currentStock: product.currentStock, minimumStock: product.minimumStock, maximumStock: product.maximumStock,
         supplierId: product.supplierId || null, expirationDate: product.expirationDate ? new Date(product.expirationDate).toISOString().split("T")[0] as any : null,
       });
+      const known = product.category ? [...new Set(products.map(p => p.category).filter(Boolean))].includes(product.category) : true;
+      setShowCategoryInput(product.category ? !known : false);
+      setCustomCategory(known ? "" : (product.category || ""));
     } else {
       setForm(defaultForm());
+      setShowCategoryInput(false);
+      setCustomCategory("");
     }
   }, [open, product]);
 
@@ -53,11 +60,13 @@ export function ProductFormDialog({ open, onOpenChange, product }: ProductFormDi
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name) { toast.error(t("common.required")); return; }
+    const category = showCategoryInput ? customCategory.trim() : (form.category || "");
+    const payload = { ...form, category };
     try {
       if (product) {
-        await updateProduct.mutateAsync({ id: product.id, data: form });
+        await updateProduct.mutateAsync({ id: product.id, data: payload });
       } else {
-        await createProduct.mutateAsync(form as InsertInventoryProduct);
+        await createProduct.mutateAsync(payload as InsertInventoryProduct);
       }
       toast.success(t("common.saved"));
       handleClose();
@@ -87,13 +96,19 @@ export function ProductFormDialog({ open, onOpenChange, product }: ProductFormDi
           </div>
           <div className="space-y-1.5">
             <Label className="text-xs font-semibold">{t("inventory.category")}</Label>
-            <Select value={form.category || ""} onValueChange={(v) => setForm({ ...form, category: v })}>
+            <Select value={showCategoryInput ? "__custom__" : (form.category || "")} onValueChange={(v) => {
+              if (v === "__custom__") { setShowCategoryInput(true); setCustomCategory(""); setForm({ ...form, category: "" }); }
+              else { setShowCategoryInput(false); setCustomCategory(""); setForm({ ...form, category: v }); }
+            }}>
               <SelectTrigger><SelectValue placeholder={t("inventory.category")} /></SelectTrigger>
               <SelectContent>
                 {categories.map(c => <SelectItem key={c} value={c}>{c}</SelectItem>)}
                 <SelectItem value="__custom__">{t("common.other") || "Autre"}</SelectItem>
               </SelectContent>
             </Select>
+            {showCategoryInput && (
+              <Input autoFocus placeholder={t("inventory.category") || "Catégorie"} value={customCategory} onChange={(e) => setCustomCategory(e.target.value)} />
+            )}
           </div>
           <div className="space-y-1.5">
             <Label className="text-xs font-semibold">{t("inventory.description") || "Description"}</Label>

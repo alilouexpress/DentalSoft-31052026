@@ -86,6 +86,14 @@ export async function registerRoutes(httpServer: Server, app: Express): Promise<
     res.status(204).send();
   }));
 
+  app.get("/api/health", wrap(async (_req, res) => {
+    res.json({
+      status: "ok",
+      uptime: Math.floor(process.uptime()),
+      timestamp: new Date().toISOString(),
+    });
+  }));
+
   // Protect all following routes
   app.use("/api", authMiddleware);
 

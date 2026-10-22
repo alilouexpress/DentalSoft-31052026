@@ -6,7 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { ChevronLeft, ChevronRight, Plus, Search, Clock, X, CalendarDays, AlertCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAppointments, useDoctors, usePatients, useCreateAppointment, useTimeSlots, useStatusConfigs } from "@/hooks/use-api";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { format, addDays, subDays, parse } from "date-fns";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
@@ -35,7 +35,28 @@ export default function Appointments() {
   const { data: appointments = [], isLoading, isError, error, refetch } = useAppointments(dateString);
   const { data: doctors = [] } = useDoctors();
   const { data: patients = [] } = usePatients();
-  const createAppointment = useCreateAppointment();
+const createAppointment = useCreateAppointment();
+  const [now, setNow] = useState(() => new Date());
+  const isTodaySelected = dateString === format(now, "yyyy-MM-dd");
+
+  useEffect(() => {
+    if (!isTodaySelected) return;
+    const id = setInterval(() => setNow(new Date()), 60000);
+    return () => clearInterval(id);
+  }, [isTodaySelected]);
+
+  const minutesOf = (value: string) => {
+    const [h, m] = value.split(":").map(Number);
+    return h * 60 + m;
+  };
+  const slotHeight = 90;
+  const slotDuration = 30;
+  const nowTotal = now.getHours() * 60 + now.getMinutes();
+  const firstSlot = timeSlots[0];
+  const nowLineTop = isTodaySelected && firstSlot
+    ? (nowTotal - minutesOf(firstSlot.value)) * (slotHeight / slotDuration)
+    : -1;
+  const showNowLine = nowLineTop >= 0 && nowLineTop <= timeSlots.length * slotHeight;
 
   const typeColors: Record<string, string> = {};
   for (const sc of statusConfigs) {
@@ -237,7 +258,15 @@ export default function Appointments() {
                   </div>
                 ))}
               </div>
-              <div className="flex-1 overflow-y-auto">
+              <div className="relative flex-1 overflow-y-auto">
+                {showNowLine && (
+                  <div aria-hidden className="pointer-events-none absolute left-0 right-0 z-10" style={{ top: `${nowLineTop}px` }}>
+                    <div className="relative">
+                      <span className="absolute left-1 -top-[5px] h-2.5 w-2.5 rounded-full bg-red-500 shadow-sm" />
+                      <span className="w-full h-[2px] bg-red-500 shadow-sm" />
+                    </div>
+                  </div>
+                )}
                 {timeSlots.map((slot) => (
                   <div key={slot.id} className="flex border-b border-border min-h-[90px] group hover:bg-muted/20 transition-colors">
                     <div className="w-20 p-2 border-r border-border text-xs font-medium text-muted-foreground flex justify-center pt-3 bg-muted/10 shrink-0">
